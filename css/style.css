@@ -481,8 +481,8 @@ p, li, span, a { font-size: clamp(0.875rem, 2.5vw, 1rem); }
     max-width: 95vw;
     max-height: 85vh;
     object-fit: contain;
-    border-radius: 0.4rem;
-    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
 }
 
 .proof-modal-close {
