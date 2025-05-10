@@ -129,6 +129,12 @@ proofModal.addEventListener('click', (e) => {
     }
 });
 
+proofModalClose.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        proofModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && proofModal.classList.contains('active')) {
         proofModal.classList.remove('active');
