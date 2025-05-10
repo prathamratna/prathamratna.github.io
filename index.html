@@ -19,6 +19,7 @@
             color: #e2e8f0;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
         }
         
         .gradient-text {
@@ -112,8 +113,9 @@
         
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(10px); /* Reduced transform for better mobile performance */
             transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform; /* Optimize for animations */
         }
         
         .fade-in.visible {
@@ -123,18 +125,18 @@
         
         .blob {
             position: absolute;
-            width: 500px;
-            height: 500px;
+            width: 300px; /* Reduced size for mobile performance */
+            height: 300px;
             background: linear-gradient(45deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            filter: blur(30px);
+            filter: blur(20px); /* Reduced blur for performance */
             z-index: -1;
-            animation: blob 8s ease-in-out infinite;
+            animation: blob 10s ease-in-out infinite; /* Slower animation for less CPU usage */
         }
         
         @keyframes blob {
             0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(20px, 20px) rotate(180deg); }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(10px, 10px) rotate(180deg); }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(360deg); }
         }
 
@@ -243,7 +245,7 @@
             }
             
             .glow-card {
-                padding: 1.5rem;
+                padding: 1rem; /* Reduced padding for mobile */
             }
             
             .timeline-item {
@@ -256,6 +258,13 @@
             
             .mobile-menu-button {
                 display: flex;
+            }
+
+            /* Ensure container doesn't overflow on mobile */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                max-width: 100%;
             }
         }
 
@@ -284,17 +293,19 @@
         /* Proof Gallery Styles */
         .proof-gallery {
             display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
+            gap: 0.5rem; /* Reduced gap for mobile */
+            padding: 0.5rem 0;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
             scrollbar-color: #38bdf8 #1e293b;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .proof-gallery::-webkit-scrollbar {
-            height: 8px;
+            height: 6px; /* Thinner scrollbar for mobile */
         }
 
         .proof-gallery::-webkit-scrollbar-track {
@@ -309,8 +320,8 @@
 
         .proof-thumbnail {
             flex: 0 0 auto;
-            width: 200px;
-            height: 150px;
+            width: 150px; /* Smaller thumbnails for mobile */
+            height: 100px;
             scroll-snap-align: start;
             position: relative;
             cursor: pointer;
@@ -362,13 +373,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 1rem; /* Add padding to ensure content fits on mobile */
         }
 
         .proof-modal-content img {
             width: auto;
             height: auto;
-            max-width: 95vw;
-            max-height: 95vh;
+            max-width: 90vw; /* Slightly smaller on mobile */
+            max-height: 80vh; /* Adjusted for mobile */
             object-fit: contain;
             border-radius: 0.5rem;
             box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
@@ -376,14 +388,14 @@
 
         .proof-modal-close {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             color: white;
-            font-size: 2rem;
+            font-size: 1.5rem; /* Smaller for mobile */
             cursor: pointer;
             background-color: rgba(56, 189, 248, 0.7);
-            width: 40px;
-            height: 40px;
+            width: 35px; /* Adjusted size for mobile */
+            height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -398,7 +410,7 @@
         }
 
         .proof-gallery-title {
-            font-size: 1.1rem;
+            font-size: 1rem; /* Smaller font for mobile */
             font-weight: 600;
             color: #38bdf8;
             margin-bottom: 0.5rem;
@@ -408,6 +420,50 @@
 
         .proof-gallery-title i {
             margin-right: 0.5rem;
+        }
+
+        /* Additional mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .proof-gallery {
+                gap: 0.5rem;
+            }
+
+            .proof-thumbnail {
+                width: 120px; /* Even smaller for smaller screens */
+                height: 80px;
+            }
+
+            .proof-modal-content img {
+                max-width: 85vw;
+                max-height: 75vh;
+            }
+
+            .proof-modal-close {
+                font-size: 1.25rem;
+                width: 30px;
+                height: 30px;
+                top: 10px;
+                right: 10px;
+            }
+
+            /* Reduce padding and margins in sections */
+            section {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            /* Optimize blob for mobile */
+            .blob {
+                width: 200px;
+                height: 200px;
+                filter: blur(15px);
+                animation: none; /* Disable animation on mobile for performance */
+            }
         }
     </style>
 </head>
@@ -959,13 +1015,14 @@
             });
         });
         
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for fade-in animations with debouncing
         const fadeElements = document.querySelectorAll('.fade-in');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Unobserve after animation to reduce overhead
                 }
             });
         }, {
