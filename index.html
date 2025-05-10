@@ -357,21 +357,27 @@
 
         .proof-modal-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .proof-modal-content img {
-            max-width: 100%;
-            max-height: 90vh;
+            width: auto;
+            height: auto;
+            max-width: 95vw;
+            max-height: 95vh;
+            object-fit: contain;
             border-radius: 0.5rem;
             box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
         }
 
         .proof-modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
+            position: fixed;
+            top: 20px;
+            right: 20px;
             color: white;
             font-size: 2rem;
             cursor: pointer;
@@ -383,6 +389,7 @@
             align-items: center;
             border-radius: 50%;
             transition: all 0.3s ease;
+            z-index: 1000;
         }
 
         .proof-modal-close:hover {
@@ -684,37 +691,37 @@
                         </div>
                         <div class="proof-gallery">
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-2.jpg" alt="Kurtiverse Proof 2" data-full="kurtiverse-proof-2.jpg">
+                                <img src="images/kurtiverse-proof-2.jpg" alt="Kurtiverse Proof 2" data-full="images/kurtiverse-proof-2.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-3.jpg" alt="Kurtiverse Proof 3" data-full="kurtiverse-proof-3.jpg">
+                                <img src="images/kurtiverse-proof-3.jpg" alt="Kurtiverse Proof 3" data-full="images/kurtiverse-proof-3.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-4.jpg" alt="Kurtiverse Proof 4" data-full="kurtiverse-proof-4.jpg">
+                                <img src="images/kurtiverse-proof-4.jpg" alt="Kurtiverse Proof 4" data-full="images/kurtiverse-proof-4.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-5.jpg" alt="Kurtiverse Proof 5" data-full="kurtiverse-proof-5.jpg">
+                                <img src="images/kurtiverse-proof-5.jpg" alt="Kurtiverse Proof 5" data-full="images/kurtiverse-proof-5.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-6.jpg" alt="Kurtiverse Proof 6" data-full="kurtiverse-proof-6.jpg">
+                                <img src="images/kurtiverse-proof-6.jpg" alt="Kurtiverse Proof 6" data-full="images/kurtiverse-proof-6.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-7.jpg" alt="Kurtiverse Proof 7" data-full="kurtiverse-proof-7.jpg">
+                                <img src="images/kurtiverse-proof-7.jpg" alt="Kurtiverse Proof 7" data-full="images/kurtiverse-proof-7.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-8.jpg" alt="Kurtiverse Proof 8" data-full="kurtiverse-proof-8.jpg">
+                                <img src="images/kurtiverse-proof-8.jpg" alt="Kurtiverse Proof 8" data-full="images/kurtiverse-proof-8.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-9.jpg" alt="Kurtiverse Proof 9" data-full="kurtiverse-proof-9.jpg">
+                                <img src="images/kurtiverse-proof-9.jpg" alt="Kurtiverse Proof 9" data-full="images/kurtiverse-proof-9.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-10.jpg" alt="Kurtiverse Proof 10" data-full="kurtiverse-proof-10.jpg">
+                                <img src="images/kurtiverse-proof-10.jpg" alt="Kurtiverse Proof 10" data-full="images/kurtiverse-proof-10.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-proof-11.jpg" alt="Kurtiverse Proof 11" data-full="kurtiverse-proof-11.jpg">
+                                <img src="images/kurtiverse-proof-11.jpg" alt="Kurtiverse Proof 11" data-full="images/kurtiverse-proof-11.jpg">
                             </div>
                             <div class="proof-thumbnail">
-                                <img src="images/kurtiverse-screenshot.jpg" alt="Kurtiverse Screenshot" data-full="kurtiverse-screenshot.jpg">
+                                <img src="images/kurtiverse-screenshot.jpg" alt="Kurtiverse Screenshot" data-full="images/kurtiverse-screenshot.jpg">
                             </div>
                         </div>
                     </div>
@@ -990,7 +997,8 @@
         // Open modal when clicking on a thumbnail
         proofThumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('click', () => {
-                modalImage.src = thumbnail.getAttribute('data-full');
+                const fullImageSrc = thumbnail.getAttribute('data-full');
+                modalImage.src = fullImageSrc;
                 modalImage.alt = thumbnail.alt;
                 proofModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
