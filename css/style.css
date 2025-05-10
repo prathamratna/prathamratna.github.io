@@ -553,7 +553,35 @@ p, li, span, a { font-size: clamp(0.875rem, 2.5vw, 1rem); }
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
 }
+.proof-thumbnail {
+    flex: 0 0 auto;
+    width: 140px; /* Slightly larger for better mobile visibility */
+    height: 90px;
+    scroll-snap-align: start;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+    border-radius: 0.4rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+@media (min-width: 768px) {
+    .proof-thumbnail {
+        width: 160px;
+        height: 110px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .proof-thumbnail {
+        width: 200px;
+        height: 130px;
+    }
+}
 @media (min-width: 640px) {
     .grid-responsive {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
