@@ -1,1034 +1,1023 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prathamratna Meshram | Digital Marketing & Business Strategy Portfolio</title>
-  <meta name="description" content="Professional portfolio of Prathamratna Meshram showcasing expertise in digital marketing, business strategy, branding, and e-commerce.">
-  <meta name="keywords" content="Prathamratna Meshram, digital marketing, branding, social media, portfolio, resume, business strategy">
-  <meta name="author" content="Prathamratna Meshram">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-    /* Base styles */
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-color: #0f172a;
-      color: #e2e8f0;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-    }
-
-    /* Gradient text animation */
-    .gradient-text {
-      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      background-size: 200% auto;
-      animation: gradient 3s ease infinite;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Glow card effect */
-    .glow-card {
-      box-shadow: 0 4px 6px rgba(56, 189, 248, 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(56, 189, 248, 0.1);
-      backdrop-filter: blur(5px);
-      border-radius: 0.75rem;
-    }
-
-    .glow-card:hover {
-      box-shadow: 0 6px 12px rgba(56, 189, 248, 0.2);
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.3);
-    }
-
-    /* Section title underline */
-    .section-title {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      border-radius: 3px;
-    }
-
-    /* Navigation link hover effect */
-    .nav-link {
-      position: relative;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #38bdf8;
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    /* Timeline styling */
-    .timeline-item {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(to bottom, #38bdf8, #818cf8);
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -6px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #38bdf8;
-      border: 2px solid #0f172a;
-    }
-
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Blob background animation */
-    .blob {
-      position: absolute;
-      width: 20vw;
-      height: 20vw;
-      max-width: 250px;
-      max-height: 250px;
-      background: linear-gradient(45deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      filter: blur(20px);
-      z-index: -1;
-      opacity: 0.6;
-      animation: blob 10s ease-in-out infinite;
-    }
-
-    @keyframes blob {
-      0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
-      50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(10px, 10px) rotate(180deg); }
-      100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(360deg); }
-    }
-
-    /* Mobile menu button */
-    .mobile-menu-button {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 28px;
-      height: 20px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 100;
-    }
-
-    .mobile-menu-button span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #38bdf8;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu-button.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .mobile-menu-button.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-button.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile menu */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 100vh;
-      background-color: rgba(15, 23, 42, 0.98);
-      backdrop-filter: blur(8px);
-      overflow: hidden;
-      transition: width 0.3s ease;
-      z-index: 90;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .mobile-menu.open {
-      width: 80%;
-    }
-
-    .mobile-menu a {
-      color: #e2e8f0;
-      font-size: clamp(1rem, 4vw, 1.2rem);
-      margin: 0.8rem 0;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateX(20px);
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu.open a {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .mobile-menu a:hover {
-      color: #38bdf8;
-    }
-
-    /* Skill item styling */
-    .skill-item {
-      display: flex;
-      align-items: center;
-      padding: 0.6rem 0.8rem;
-      margin-bottom: 0.4rem;
-      background-color: rgba(30, 41, 59, 0.5);
-      border-radius: 0.4rem;
-      transition: all 0.2s ease;
-    }
-
-    .skill-item:hover {
-      background-color: rgba(30, 41, 59, 0.8);
-      transform: translateX(3px);
-    }
-
-    .skill-icon {
-      margin-right: 0.8rem;
-      color: #38bdf8;
-      font-size: clamp(1rem, 3vw, 1.1rem);
-    }
-
-    /* Proof gallery styling */
-    .proof-gallery {
-      display: flex;
-      gap: 0.4rem;
-      padding: 0.4rem 0;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: thin;
-      scrollbar-color: #38bdf8 #1e293b;
-      margin-top: 0.8rem;
-    }
-
-    .proof-gallery::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    .proof-gallery::-webkit-scrollbar-track {
-      background: #1e293b;
-      border-radius: 6px;
-    }
-
-    .proof-gallery::-webkit-scrollbar-thumb {
-      background-color: #38bdf8;
-      border-radius: 6px;
-    }
-
-    .proof-thumbnail {
-      flex: 0 0 auto;
-      width: clamp(100px, 25vw, 120px);
-      height: clamp(60px, 15vw, 80px);
-      scroll-snap-align: start;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
-      border-radius: 0.4rem;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .proof-thumbnail:hover {
-      transform: scale(1.03);
-    }
-
-    .proof-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0.2rem;
-    }
-
-    /* Proof modal styling */
-    .proof-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(15, 23, 42, 0.98);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .proof-modal.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .proof-modal-content {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem;
-    }
-
-    .proof-modal-content img {
-      width: auto;
-      height: auto;
-      max-width: 95vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 0.4rem;
-      box-shadow: 0 6px 15px rgba(56, 189, 248, 0.2);
-    }
-
-    .proof-modal-close {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background-color: rgba(56, 189, 248, 0.7);
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-      z-index: 1000;
-    }
-
-    .proof-modal-close:hover {
-      background-color: rgba(56, 189, 248, 1);
-      transform: rotate(90deg);
-    }
-
-    .proof-gallery-title {
-      font-size: clamp(0.8rem, 3vw, 0.9rem);
-      font-weight: 600;
-      color: #38bdf8;
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .proof-gallery-title i {
-      margin-right: 0.4rem;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .blob {
-        width: 15vw;
-        height: 15vw;
-        max-width: 200px;
-        max-height: 200px;
-      }
-
-      .timeline-item {
-        padding-left: 1.2rem;
-      }
-
-      .timeline-dot {
-        left: -5px;
-        width: 10px;
-        height: 10px;
-      }
-
-      .desktop-nav {
-        gap: 1rem;
-      }
-
-      .glow-card {
-        padding: 1rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        font-size: 14px;
-      }
-
-      .blob {
-        width: 10vw;
-        height: 10vw;
-        max-width: 150px;
-        max-height: 150px;
-        filter: blur(15px);
-      }
-
-      .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      .header h1 {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-      }
-
-      .header h2 {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-      }
-
-      .header p {
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
-      }
-
-      .section-title {
-        font-size: clamp(1.2rem, 5vw, 1.5rem);
-      }
-
-      .glow-card h3 {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-      }
-
-      .skill-item {
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
-      }
-
-      .proof-thumbnail {
-        width: clamp(80px, 20vw, 100px);
-        height: clamp(50px, 12vw, 60px);
-      }
-
-      .mobile-menu-button {
-        width: 24px;
-        height: 18px;
-      }
-
-      .mobile-menu a {
-        font-size: clamp(1rem, 5vw, 1.1rem);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .blob {
-        width: 8vw;
-        height: 8vw;
-        max-width: 120px;
-        max-height: 120px;
-      }
-
-      .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-
-      .header h1 {
-        font-size: clamp(1.2rem, 5vw, 1.5rem);
-      }
-
-      .header p {
-        font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-      }
-
-      .section-title {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-      }
-
-      .glow-card {
-        padding: 0.75rem;
-      }
-
-      .proof-gallery {
-        gap: 0.2rem;
-      }
-
-      .proof-thumbnail {
-        width: clamp(60px, 18vw, 80px);
-        height: clamp(40px, 10vw, 50px);
-      }
-
-      .form input,
-      .form textarea {
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
-      }
-
-      .form button {
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathamratna Meshram | Digital Marketing & Business Strategy Portfolio</title>
+    <meta name="description" content="Professional portfolio of Prathamratna Meshram showcasing expertise in digital marketing, business strategy, branding, and e-commerce.">
+    <meta name="keywords" content="Prathamratna Meshram, digital marketing, branding, social media, portfolio, resume, business strategy">
+    <meta name="author" content="Prathamratna Meshram">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        /* Custom Styles */
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glow-card {
+            box-shadow: 0 4px 6px rgba(56, 189, 248, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .glow-card:hover {
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            border-radius: 3px;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #38bdf8;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #38bdf8, #818cf8);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #38bdf8;
+            border: 3px solid #0f172a;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(45deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            filter: blur(30px);
+            z-index: -1;
+            animation: blob 8s ease-in-out infinite;
+        }
+        
+        @keyframes blob {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(20px, 20px) rotate(180deg); }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 100;
+        }
+        
+        .mobile-menu-button span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #38bdf8;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-button.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        
+        .mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-button.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100vh;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            transition: width 0.3s ease;
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .mobile-menu.open {
+            width: 70%;
+        }
+        
+        .mobile-menu a {
+            color: #e2e8f0;
+            font-size: 1.25rem;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.open a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .mobile-menu a:hover {
+            color: #38bdf8;
+        }
+
+        /* Close button styles */
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #e2e8f0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.open .mobile-menu-close {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-close:hover {
+            color: #38bdf8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-title::after {
+                width: 100%;
+            }
+            
+            .glow-card {
+                padding: 1.5rem;
+            }
+            
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+        }
+
+        /* Skill list styles */
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            background-color: rgba(30, 41, 59, 0.5);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: rgba(30, 41, 59, 0.8);
+            transform: translateX(5px);
+        }
+
+        .skill-icon {
+            margin-right: 1rem;
+            color: #38bdf8;
+            font-size: 1.25rem;
+        }
+
+        /* Proof Gallery Styles */
+        .proof-gallery {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: #38bdf8 #1e293b;
+            margin-top: 1.5rem;
+        }
+
+        .proof-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .proof-gallery::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+
+        .proof-gallery::-webkit-scrollbar-thumb {
+            background-color: #38bdf8;
+            border-radius: 10px;
+        }
+
+        .proof-thumbnail {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 150px;
+            scroll-snap-align: start;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            border-radius: 0.5rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .proof-thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .proof-thumbnail img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 0.25rem;
+        }
+
+        .proof-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .proof-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .proof-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .proof-modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .proof-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: rgba(56, 189, 248, 0.7);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .proof-modal-close:hover {
+            background-color: rgba(56, 189, 248, 1);
+            transform: rotate(90deg);
+        }
+
+        .proof-gallery-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .proof-gallery-title i {
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
 <body class="min-h-screen">
-  <!-- Blob Background Elements -->
-  <div class="blob top-0 -right-40 opacity-70"></div>
-  <div class="blob bottom-0 -left-40 opacity-70"></div>
-
-  <!-- Navigation -->
-  <nav class="bg-slate-900/80 py-3 sticky top-0 z-50 backdrop-blur-md border-b border-slate-800" aria-label="Main navigation">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <a href="#home" class="text-xl font-bold gradient-text hover:scale-105 transition-transform" aria-label="Home">
-        Prathamratna Meshram
-      </a>
-      <!-- Desktop Navigation -->
-      <div class="desktop-nav hidden md:flex gap-6">
-        <a href="#home" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Home</a>
-        <a href="#skills" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Skills</a>
-        <a href="#education" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Education</a>
-        <a href="#work" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Work</a>
-        <a href="#projects" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Projects</a>
-        <a href="#contact" class="nav-link text-slate-300 hover:text-sky-400 transition-colors text-sm">Contact</a>
-      </div>
-      <!-- Mobile Menu Button -->
-      <button class="mobile-menu-button md:hidden" aria-label="Toggle mobile menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <!-- Blob Background Elements -->
+    <div class="blob top-0 -right-64 opacity-70"></div>
+    <div class="blob bottom-0 -left-64 opacity-70"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-slate-900/80 py-4 sticky top-0 z-50 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold gradient-text hover:scale-105 transition-transform">
+                Prathamratna Meshram
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav hidden md:flex gap-8">
+                <a href="#home" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Home</a>
+                <a href="#skills" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#education" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Education</a>
+                <a href="#work" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Work</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#leadership" class="nav-link text-slate-300 hover:text-sky-400 transition-colors">Leadership</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#education" class="mobile-nav-link">Education</a>
+        <a href="#work" class="mobile-nav-link">Work</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#leadership" class="mobile-nav-link">Leadership</a>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" aria-hidden="true">
-    <div class="mobile-menu-close">
-      <i class="fas fa-times" aria-label="Close mobile menu"></i>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl" id="home">
+        <!-- Header Section -->
+        <header class="mb-16 text-center fade-in">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 gradient-text">Prathamratna Meshram</h1>
+            <h2 class="text-lg md:text-2xl font-medium text-slate-300 mb-6">Digital Marketing Specialist | Business Strategist</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Passionate about driving innovation and growth through strategic business solutions and digital marketing expertise. 
+                Transforming ideas into impactful digital experiences.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:work.prathamratnameshram@gmail.com"
+                    class="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 rounded-full font-medium transition-all flex items-center shadow-lg hover:shadow-xl hover:scale-105 text-sm md:text-base">
+                    <i class="fas fa-envelope mr-2"></i> Email
+                </a>
+                <a href="https://www.linkedin.com/in/prathamratna/" target="_blank"
+                    class="px-4 py-2 md:px-6 md:py-3 border border-sky-500 text-sky-400 hover:bg-sky-900/30 rounded-full font-medium transition-all flex items-center hover:scale-105 text-sm md:text-base">
+                    <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                </a>
+            </div>
+        </header>
+                        
+        <!-- Skills & Interests Section -->
+        <section id="skills" class="mb-16 fade-in">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 gradient-text text-center section-title">
+                <i class="fas fa-briefcase text-sky-400 mr-2"></i>Skills & Interests
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6 text-sky-400 flex items-center">
+                        <i class="fas fa-cogs mr-2"></i> Professional Skills
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="fas fa-chess skill-icon"></i>
+                            <span class="text-slate-300">Business Strategy Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-bullhorn skill-icon"></i>
+                            <span class="text-slate-300">Digital Marketing Campaigns</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-store skill-icon"></i>
+                            <span class="text-slate-300">Shopify Store Management</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-paint-brush skill-icon"></i>
+                            <span class="text-slate-300">Brand Identity Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line skill-icon"></i>
+                            <span class="text-slate-300">Market Research & Analysis</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users skill-icon"></i>
+                            <span class="text-slate-300">Team Leadership</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-envelope-open skill-icon"></i>
+                            <span class="text-slate-300">Email Marketing Automation</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-search-dollar skill-icon"></i>
+                            <span class="text-slate-300">SEO/SEM Strategies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6 text-sky-400 flex items-center">
+                        <i class="fas fa-heart mr-2"></i> Interests & Passions
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-book text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Storytelling</span>
+                        </div>
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-palette text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Branding</span>
+                        </div>
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-music text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Music Production</span>
+                        </div>
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-brain text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Psychology</span>
+                        </div>
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-video text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Content Creation</span>
+                        </div>
+                        <div class="bg-slate-700/50 p-3 md:p-4 rounded-lg flex items-center hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-globe text-sky-400 mr-2 md:mr-3 text-lg md:text-xl"></i>
+                            <span class="text-slate-300 text-sm md:text-base">Digital Trends</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <a href="#home" class="mobile-nav-link">Home</a>
-    <a href="#skills" class="mobile-nav-link">Skills</a>
-    <a href="#education" class="mobile-nav-link">Education</a>
-    <a href="#work" class="mobile-nav-link">Work</a>
-    <a href="#projects" class="mobile-nav-link">Projects</a>
-    <a href="#contact" class="mobile-nav-link">Contact</a>
-  </div>
-
-  <!-- Main Container -->
-  <div class="container mx-auto px-4 py-8 max-w-6xl" id="home">
-    <!-- Header Section -->
-    <header class="mb-12 text-center fade-in">
-      <h1 class="text-2xl md:text-4xl font-bold mb-3 gradient-text">Prathamratna Meshram</h1>
-      <h2 class="text-base md:text-xl font-medium text-slate-300 mb-4">Digital Marketing Specialist | E-commerce Strategist</h2>
-      <p class="text-slate-400 mb-6 leading-relaxed max-w-2xl mx-auto text-sm md:text-base">
-        Passionate about driving business growth through innovative digital marketing, e-commerce strategies, and data-driven insights. Transforming ideas into measurable results with a focus on brand elevation and market expansion.
-      </p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="mailto:work.prathamratnameshram@gmail.com" class="px-4 py-2 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 rounded-full font-medium transition-all flex items-center shadow hover:shadow-md hover:scale-105 text-xs md:text-sm" aria-label="Email">
-          <i class="fas fa-envelope mr-2 text-xs"></i> Email
-        </a>
-        <a href="https://www.linkedin.com/in/prathamratna/" target="_blank" class="px-4 py-2 border border-sky-500 text-sky-400 hover:bg-sky-900/30 rounded-full font-medium transition-all flex items-center hover:scale-105 text-xs md:text-sm" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in mr-2 text-xs"></i> LinkedIn
-        </a>
-        <a href="#contact" class="px-4 py-2 border border-indigo-500 text-indigo-400 hover:bg-indigo-900/30 rounded-full font-medium transition-all flex items-center hover:scale-105 text-xs md:text-sm" aria-label="Contact">
-          <i class="fas fa-paper-plane mr-2 text-xs"></i> Contact
-        </a>
-      </div>
-    </header>
-
-    <!-- Skills & Interests Section -->
-    <section id="skills" class="mb-12 fade-in">
-      <h2 class="text-xl md:text-2xl font-bold mb-6 gradient-text text-center section-title">
-        <i class="fas fa-briefcase text-sky-400 mr-2"></i>Skills & Expertise
-      </h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="glow-card bg-slate-800/50 p-4 rounded-xl">
-          <h3 class="text-base md:text-lg font-bold mb-3 text-sky-400 flex items-center">
-            <i class="fas fa-cogs mr-2"></i> Professional Skills
-          </h3>
-          <div class="space-y-2">
-            <div class="skill-item">
-              <i class="fas fa-bullhorn skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Digital Marketing</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-store skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">E-commerce Strategy</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-users skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Lead Generation & Sales</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-chart-line skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Market Research & Competitor Analysis</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-paint-brush skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Social Media Marketing</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-chess skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Business Development</span>
-            </div>
-          </div>
-        </div>
-        <div class="glow-card bg-slate-800/50 p-4 rounded-xl">
-          <h3 class="text-base md:text-lg font-bold mb-3 text-sky-400 flex items-center">
-            <i class="fas fa-tools mr-2"></i> Soft Skills
-          </h3>
-          <div class="space-y-2">
-            <div class="skill-item">
-              <i class="fas fa-users-cog skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Teamwork</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-lightbulb skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Creative Thinking</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-user-tie skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Leadership</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-handshake skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Negotiation</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-clock skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Time Management</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-comments skill-icon"></i>
-              <span class="text-slate-300 text-sm md:text-base">Interpersonal Skills</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="glow-card bg-slate-800/50 p-4 rounded-xl mt-4">
-        <h3 class="text-base md:text-lg font-bold mb-3 text-sky-400 flex items-center">
-          <i class="fas fa-heart mr-2"></i> Interests
-        </h3>
-        <div class="space-y-2">
-          <div class="skill-item">
-            <i class="fas fa-dumbbell skill-icon"></i>
-            <span class="text-slate-300 text-sm md:text-base">Weightlifting</span>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-music skill-icon"></i>
-            <span class="text-slate-300 text-sm md:text-base">Music Production</span>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-utensils skill-icon"></i>
-            <span class="text-slate-300 text-sm md:text-base">Cooking</span>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-plane skill-icon"></i>
-            <span class="text-slate-300 text-sm md:text-base">Traveling</span>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-brain skill-icon"></i>
-            <span class="text-slate-300 text-sm md:text-base">Human Psychology</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- Education Section -->
-    <section id="education" class="mb-12 fade-in">
-      <h2 class="text-xl md:text-2xl font-bold mb-6 gradient-text text-center section-title">
-        <i class="fas fa-graduation-cap text-sky-400 mr-2"></i>Education
-      </h2>
-      <div class="glow-card bg-slate-800/50 p-6 rounded-xl">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-            <h3 class="text-lg font-bold text-sky-400">Bachelor of Business Administration</h3>
-            <span class="text-sm text-slate-400">2021 - May 2025</span>
-          </div>
-          <p class="text-slate-300 mb-2">Woxsen University, Hyderabad, IN</p>
-          <p class="text-slate-400 text-sm">
-            Specialized in E-commerce and Digital Marketing. GPA: 3.5/4.0. Led operations for "APPRISE 2023" event and established a core team for PRME Hyderabad chapter meet-up 2023.
-          </p>
+    <section id="education" class="bg-slate-800/50 py-12 relative overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 gradient-text text-center section-title fade-in">
+                <i class="fas fa-graduation-cap text-sky-400 mr-2"></i>Education
+            </h2>
+            <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl mb-8 fade-in timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3 md:mb-4">
+                    <div>
+                        <h3 class="font-bold text-lg md:text-xl text-sky-400 mb-1">Bachelor of Business Administration</h3>
+                        <p class="text-xs md:text-sm text-slate-400">E-commerce & Digital Marketing</p>
+                    </div>
+                    <div class="mt-2 md:mt-0">
+                        <span class="inline-block bg-sky-900/30 text-sky-400 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-medium">
+                            2022 - Oct 2025
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center mb-3 md:mb-4">
+                    <i class="fas fa-university text-slate-400 mr-2 text-sm md:text-base"></i>
+                    <span class="text-slate-300 text-sm md:text-base">Woxsen University, Hyderabad, IN</span>
+                </div>
+                <div class="flex items-center mb-3 md:mb-4">
+                    <i class="fas fa-star text-slate-400 mr-2 text-sm md:text-base"></i>
+                    <span class="text-slate-300 text-sm md:text-base">GPA: 3.5/4.0</span>
+                </div>
+                <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                    <li>Pursuing a comprehensive degree focusing on digital marketing strategies and e-commerce operations.</li>
+                    <li>Engaged in coursework covering business strategy, market analysis, and digital transformation.</li>
+                    <li>Actively participated in university events, enhancing leadership and organizational skills.</li>
+                </ul>
+            </div>
         </div>
-      </div>
     </section>
-
+    
     <!-- Work Experience Section -->
-    <section id="work" class="mb-12 fade-in">
-      <h2 class="text-xl md:text-2xl font-bold mb-6 gradient-text text-center section-title">
-        <i class="fas fa-briefcase text-sky-400 mr-2"></i>Work Experience
-      </h2>
-      <div class="glow-card bg-slate-800/50 p-6 rounded-xl">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-            <h3 class="text-lg font-bold text-sky-400">Business Strategy Intern</h3>
-            <span class="text-sm text-slate-400">May 2024 - July 2024</span>
-          </div>
-          <p class="text-slate-300 mb-2">Fond Vet Tech, Bangalore, IN</p>
-          <ul class="list-disc list-inside text-slate-400 text-sm space-y-1">
-            <li>Led market research and competitor analysis to create GTM strategies for 7+ countries.</li>
-            <li>Created strategic plans for market expansion into 3+ business segments.</li>
-          </ul>
+    <section id="work" class="py-12 relative">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 gradient-text text-center section-title fade-in">
+                <i class="fas fa-building text-sky-400 mr-2"></i>Work Experience
+            </h2>
+            
+            <div class="space-y-6 md:space-y-8">
+                <!-- Timeline Item 1 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3 md:mb-4">
+                        <h3 class="font-bold text-lg md:text-xl text-sky-400">Business Strategy Intern</h3>
+                        <span class="text-xs md:text-sm text-slate-400 mt-1 md:mt-0">May 2024 - Jul 2024</span>
+                    </div>
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <i class="fas fa-map-marker-alt text-slate-400 mr-2 text-sm md:text-base"></i>
+                        <span class="text-slate-300 text-sm md:text-base">Fond Vet Tech, Bangalore, IN</span>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                        <li>Developed go-to-market strategies for 7 distinct target markets, projecting a $2M revenue increase in the first year.</li>
+                        <li>Expanded addressable market by 3 new service segments: wearable health-monitoring, pet-friendly travel, and subscription-based grooming.</li>
+                        <li>Conducted market research and competitor analysis to enhance competitive positioning.</li>
+                    </ul>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3 md:mb-4">
+                        <h3 class="font-bold text-lg md:text-xl text-sky-400">Social Intern</h3>
+                        <span class="text-xs md:text-sm text-slate-400 mt-1 md:mt-0">Jun 2023 - Jul 2024</span>
+                    </div>
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <i class="fas fa-map-marker-alt text-slate-400 mr-2 text-sm md:text-base"></i>
+                        <span class="text-slate-300 text-sm md:text-base">Robin Hood Army, Akola, IN</span>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                        <li>Directed citywide food-distribution operations across 5 high-need locations, delivering over 2,000 meals weekly to 1,500 families.</li>
+                        <li>Managed logistics with 3 partnered restaurants and coordinated a team of 20+ volunteers.</li>
+                        <li>Collaborated with the social media team to create 30+ posts, increasing awareness.</li>
+                    </ul>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3 md:mb-4">
+                        <h3 class="font-bold text-lg md:text-xl text-sky-400">Marketing & Sales Intern</h3>
+                        <span class="text-xs md:text-sm text-slate-400 mt-1 md:mt-0">Mar 2023 - Apr 2023</span>
+                    </div>
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <i class="fas fa-map-marker-alt text-slate-400 mr-2 text-sm md:text-base"></i>
+                        <span class="text-slate-300 text-sm md:text-base">Unschool, Remote</span>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                        <li>Led an 8-member team to execute a lead-generation strategy, reaching 5 universities and 1,700+ students in 2 days.</li>
+                        <li>Generated 1,000 qualified leads and closed 10 sales with an AOV of INR 15,000.</li>
+                        <li>Engaged with 100+ prospects to drive conversions.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="timeline-item mt-8">
-          <div class="timeline-dot"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-            <h3 class="text-lg font-bold text-sky-400">Social Intern</h3>
-            <span class="text-sm text-slate-400">June 2023 - July 2024</span>
-          </div>
-          <p class="text-slate-300 mb-2">Robin Hood Army, Akola, IN</p>
-          <ul class="list-disc list-inside text-slate-400 text-sm space-y-1">
-            <li>Assisted citywide operations, managed 3+ restaurants and 20+ volunteers to distribute food at 5+ locations.</li>
-            <li>Partnered with social media team to create 30+ posts for awareness.</li>
-          </ul>
-        </div>
-        <div class="timeline-item mt-8">
-          <div class="timeline-dot"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-            <h3 class="text-lg font-bold text-sky-400">Marketing and Sales Intern</h3>
-            <span class="text-sm text-slate-400">March 2023 - April 2023</span>
-          </div>
-          <p class="text-slate-300 mb-2">Unschool, Remote</p>
-          <ul class="list-disc list-inside text-slate-400 text-sm space-y-1">
-            <li>Led an 8-member team in executing a lead-generation strategy for a flagship campaign.</li>
-            <li>Reached 5 universities and 1,700+ students in 2 days, generating 1,000 qualified leads.</li>
-            <li>Engaged with 100+ prospects, closed 10 deals with AOV of INR 15,000.</li>
-          </ul>
-        </div>
-      </div>
     </section>
-
+    
     <!-- Projects Section -->
-    <section id="projects" class="mb-12 fade-in">
-      <h2 class="text-xl md:text-2xl font-bold mb-6 gradient-text text-center section-title">
-        <i class="fas fa-project-diagram text-sky-400 mr-2"></i>Notable Projects
-      </h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="glow-card bg-slate-800/50 p-4 rounded-xl">
-          <h3 class="text-lg font-bold text-sky-400 mb-2">Kurtiverse: Shopify Retail Store</h3>
-          <p class="text-slate-400 text-sm mb-3">
-            Built a Shopify store from scratch, integrated CRM software, and created automation workflows. Generated INR 60,000+ revenue in 2 days with 120 emails sent (67% open rate).
-          </p>
-          <div class="proof-gallery-title">
-            <i class="fas fa-images"></i> Project Screenshots
-          </div>
-          <div class="proof-gallery">
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-2.jpg" alt="Kurtiverse Project Screenshot 2" loading="lazy">
+    <section id="projects" class="bg-slate-800/50 py-12 relative overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 gradient-text text-center section-title fade-in">
+                <i class="fas fa-project-diagram text-sky-400 mr-2"></i>Projects
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Project 1 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in h-full flex flex-col">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-bullhorn text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Marketing Head, Kurtiverse</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Feb 2025 - Apr 2025 | Hyderabad, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 mb-3 md:mb-4 flex-grow text-sm md:text-base pl-4">
+                        <li>Developed a Meta ads campaign with a 7.63% CTR, reaching 1,068 students at $0.0097 CPC.</li>
+                        <li>Implemented automated email workflows, sending 84 emails with a 61.5% open rate.</li>
+                        <li>Created content generating 30,000 profile views, averaging 2,200 daily views.</li>
+                        <li>Built a Shopify website with discounts and email capture popups, driving INR 60,000+ revenue in 2 days.</li>
+                    </ul>
+                    
+                    <!-- Proof of Work Gallery -->
+                    <div class="mt-4">
+                        <div class="proof-gallery-title">
+                            <i class="fas fa-images"></i> Proof of Work
+                        </div>
+                        <div class="proof-gallery">
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-2.jpg" alt="Kurtiverse Proof 2" data-full="kurtiverse-proof-2.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-3.jpg" alt="Kurtiverse Proof 3" data-full="kurtiverse-proof-3.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-4.jpg" alt="Kurtiverse Proof 4" data-full="kurtiverse-proof-4.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-5.jpg" alt="Kurtiverse Proof 5" data-full="kurtiverse-proof-5.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-6.jpg" alt="Kurtiverse Proof 6" data-full="kurtiverse-proof-6.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-7.jpg" alt="Kurtiverse Proof 7" data-full="kurtiverse-proof-7.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-8.jpg" alt="Kurtiverse Proof 8" data-full="kurtiverse-proof-8.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-9.jpg" alt="Kurtiverse Proof 9" data-full="kurtiverse-proof-9.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-10.jpg" alt="Kurtiverse Proof 10" data-full="kurtiverse-proof-10.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-proof-11.jpg" alt="Kurtiverse Proof 11" data-full="kurtiverse-proof-11.jpg">
+                            </div>
+                            <div class="proof-thumbnail">
+                                <img src="images/kurtiverse-screenshot.jpg" alt="Kurtiverse Screenshot" data-full="kurtiverse-screenshot.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Digital Marketing
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Shopify
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Email Automation
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in h-full flex flex-col">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-paint-brush text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Branding Head, Scintilla</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Oct 2024 - Dec 2024 | Hyderabad, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 mb-3 md:mb-4 flex-grow text-sm md:text-base pl-4">
+                        <li>Developed a comprehensive brand identity, achieving 100% recognition across Woxsen University.</li>
+                        <li>Led workshops with design teams, earning a 75% positive feedback rate on visual consistency.</li>
+                        <li>Designed a vibrant color palette, logo, and typography from inception.</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Branding
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Visual Identity
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Design Systems
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in h-full flex flex-col">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-store text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Shopify Retail Store</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Hyderabad, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 mb-3 md:mb-4 flex-grow text-sm md:text-base pl-4">
+                        <li>Built a Shopify website from scratch, integrating CRM and automation workflows.</li>
+                        <li>Achieved INR 60,000+ revenue in 2 days with 120 automated emails at a 67% open rate.</li>
+                        <li>Boosted traffic and sales through strategic marketing.</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            E-commerce
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Shopify
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            CRM Integration
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in h-full flex flex-col">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-globe text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Brand Management & Website Development</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Hyderabad, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 mb-3 md:mb-4 flex-grow text-sm md:text-base pl-4">
+                        <li>Designed a beverage brand identity, including product and marketing visuals using graphic design and 3D modeling.</li>
+                        <li>Developed a WordPress website for a soft drink company, incorporating SEO and SEM strategies.</li>
+                        <li>Delivered a standout project enhancing brand visibility and engagement.</li>
+                    </ul>
+                    <div class="mt-auto">
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            Brand Management
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            WordPress
+                        </span>
+                        <span class="inline-block bg-sky-900/20 text-sky-400 px-2 py-1 rounded-full text-xs font-medium mr-1 md:mr-2 mb-1 md:mb-2">
+                            SEO/SEM
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-3.jpg" alt="Kurtiverse Project Screenshot 3" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-4.jpg" alt="Kurtiverse Project Screenshot 4" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-5.jpg" alt="Kurtiverse Project Screenshot 5" loading="lazy">
-            </div>
-          </div>
         </div>
-        <div class="glow-card bg-slate-800/50 p-4 rounded-xl">
-          <h3 class="text-lg font-bold text-sky-400 mb-2">Scintilla: Beverage Brand</h3>
-          <p class="text-slate-400 text-sm mb-3">
-            Developed a beverage brand from scratch, designing its identity, product, and marketing visuals using graphic design and 3D modeling.
-          </p>
-          <div class="proof-gallery-title">
-            <i class="fas fa-images"></i> Brand Assets
-          </div>
-          <div class="proof-gallery">
-            <div class="proof-thumbnail">
-              <img src="images/1.jpg" alt="Scintilla Brand Asset 1" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/2.jpg" alt="Scintilla Brand Asset 2" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/3.jpg" alt="Scintilla Brand Asset 3" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/4.jpg" alt="Scintilla Brand Asset 4" loading="lazy">
-            </div>
-          </div>
-        </div>
-        <div class="glow-card bg-slate-800/50 p-4 rounded-xl">
-          <h3 class="text-lg font-bold text-sky-400 mb-2">Soft Drink Website</h3>
-          <p class="text-slate-400 text-sm mb-3">
-            Developed a dynamic WordPress website for a soft drink company, incorporating SEO and SEM strategies to enhance visibility and engagement.
-          </p>
-          <div class="proof-gallery-title">
-            <i class="fas fa-images"></i> Website Screenshots
-          </div>
-          <div class="proof-gallery">
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-6.jpg" alt="Soft Drink Website Screenshot 6" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-7.jpg" alt="Soft Drink Website Screenshot 7" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-8.jpg" alt="Soft Drink Website Screenshot 8" loading="lazy">
-            </div>
-            <div class="proof-thumbnail">
-              <img src="images/kurtiverse-proof-9.jpg" alt="Soft Drink Website Screenshot 9" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="mb-12 fade-in">
-      <h2 class="text-xl md:text-2xl font-bold mb-6 gradient-text text-center section-title">
-        <i class="fas fa-envelope text-sky-400 mr-2"></i>Get In Touch
-      </h2>
-      <div class="glow-card bg-slate-800/50 p-6 rounded-xl max-w-2xl mx-auto">
-        <div class="space-y-4">
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Name</label>
-              <input type="text" id="name" name="name" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-required="true">
+    
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-12 relative">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 gradient-text text-center section-title fade-in">
+                <i class="fas fa-users text-sky-400 mr-2"></i>Leadership Experience
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Leadership 1 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-tasks text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Operations Head, APPRISE 2023</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Apr 2023 | Woxsen University, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                        <li>Directed logistics for 300+ participants, increasing engagement by 40%.</li>
+                        <li>Led a team of 12 volunteers, achieving a 100% satisfaction rate.</li>
+                        <li>Secured a 30% increase in sponsorship through strategic outreach.</li>
+                    </ul>
+                    <div class="mt-4 md:mt-6">
+                        <div class="flex items-center text-slate-400 text-xs md:text-sm">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>Team Size: 12 volunteers</span>
+                        </div>
+                        <div class="flex items-center text-slate-400 text-xs md:text-sm mt-1 md:mt-2">
+                            <i class="fas fa-user-check mr-2"></i>
+                            <span>Participant Satisfaction: 100%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leadership 2 -->
+                <div class="glow-card bg-slate-800/50 p-6 md:p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="bg-sky-900/20 p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+                            <i class="fas fa-handshake text-sky-400 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg text-sky-400">Outreach Head, PRME Hyderabad Chapter Meet-Up</h3>
+                            <p class="text-xs md:text-sm text-slate-400">Apr 2024 | Woxsen University, IN</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base pl-4">
+                        <li>Led a 12-member team to manage logistics and outreach, ensuring seamless execution.</li>
+                        <li>Secured INR 2,50,000 in sponsorships through strategic partnerships with corporate and educational institutions.</li>
+                        <li>Enhanced event visibility and stakeholder coordination.</li>
+                    </ul>
+                    <div class="mt-4 md:mt-6">
+                        <div class="flex items-center text-slate-400 text-xs md:text-sm">
+                            <i class="fas fa-rupee-sign mr-2"></i>
+                            <span>Sponsorships Secured: INR 2,50,000</span>
+                        </div>
+                        <div class="flex items-center text-slate-400 text-xs md:text-sm mt-1 md:mt-2">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>Team Size: 12 members</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
-              <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-required="true">
-            </div>
-          </div>
-          <div>
-            <label for="subject" class="block text-sm font-medium text-slate-300 mb-1">Subject</label>
-            <input type="text" id="subject" name="subject" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-required="true">
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Message</label>
-            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-required="true"></textarea>
-          </div>
-          <button type="button" onclick="handleContactSubmit()" class="w-full px-4 py-2 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 rounded-md font-medium text-white transition-all flex items-center justify-center">
-            <i class="fas fa-paper-plane mr-2"></i> Send Message
-          </button>
         </div>
-        <div class="mt-6 pt-6 border-t border-slate-700">
-          <h3 class="text-lg font-medium text-slate-300 mb-3">Direct Contact</h3>
-          <div class="space-y-2">
-            <div class="flex items-center">
-              <i class="fas fa-envelope text-sky-400 mr-3"></i>
-              <a href="mailto:work.prathamratnameshram@gmail.com" class="text-slate-300 hover:text-sky-400 transition-colors">work.prathamratnameshram@gmail.com</a>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-phone text-sky-400 mr-3"></i>
-              <a href="tel:+918378919585" class="text-slate-300 hover:text-sky-400 transition-colors">+91 8378919585</a>
-            </div>
-            <div class="flex items-center">
-              <i class="fab fa-linkedin text-sky-400 mr-3"></i>
-              <a href="https://www.linkedin.com/in/prathamratna/" target="_blank" class="text-slate-300 hover:text-sky-400 transition-colors">linkedin.com/in/prathamratna</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-slate-900/80 py-6 border-t border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <p class="text-slate-400 text-sm">
-            © <span id="year"></span> Prathamratna Meshram. All rights reserved.
-          </p>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 py-8 mt-16 border-t border-slate-800 backdrop-blur-md">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4 md:mb-6">
+                <a href="https://www.linkedin.com/in/prathamratna/" target="_blank"
+                    class="text-slate-300 hover:text-sky-400 transition-all text-xl md:text-2xl hover:scale-125">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:work.prathamratnameshram@gmail.com"
+                    class="text-slate-300 hover:text-sky-400 transition-all text-xl md:text-2xl hover:scale-125">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs md:text-sm mb-3 md:mb-4">
+                Let's connect and create something amazing together!
+            </p>
+            <p class="text-slate-500 text-xs md:text-sm">
+                © 2025 Prathamratna Meshram. All rights reserved.
+            </p>
         </div>
-        <div class="flex space-x-4">
-          <a href="mailto:work.prathamratnameshram@gmail.com" class="text-slate-400 hover:text-sky-400 transition-colors" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/prathamratna/" target="_blank" class="text-slate-400 hover:text-sky-400 transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+    </footer>
+
+    <!-- Proof of Work Modal -->
+    <div class="proof-modal" id="proofModal">
+        <div class="proof-modal-content">
+            <img id="modalImage" src="" alt="Proof of Work">
+            <div class="proof-modal-close">
+                <i class="fas fa-times"></i>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            
+            // Animate menu items when opening
+            if (mobileMenu.classList.contains('open')) {
+                const menuItems = document.querySelectorAll('.mobile-menu a');
+                menuItems.forEach((item, index) => {
+                    item.style.transitionDelay = `${index * 0.1}s`;
+                });
+            }
+        });
+        
+        // Close menu when clicking on the close button
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenuButton.classList.remove('active');
+            mobileMenu.classList.remove('open');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuButton.classList.remove('active');
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
 
-  <!-- Proof Modal -->
-  <div class="proof-modal" aria-hidden="true">
-    <div class="proof-modal-close">
-      <i class="fas fa-times" aria-label="Close modal"></i>
-    </div>
-    <div class="proof-modal-content">
-      <img src="" alt="Proof Image" id="proofModalImage" loading="lazy">
-    </div>
-  </div>
+        // Proof of Work Gallery Functionality
+        const proofModal = document.getElementById('proofModal');
+        const modalImage = document.getElementById('modalImage');
+        const proofThumbnails = document.querySelectorAll('.proof-thumbnail img');
+        const proofModalClose = document.querySelector('.proof-modal-close');
 
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+        // Open modal when clicking on a thumbnail
+        proofThumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                modalImage.src = thumbnail.getAttribute('data-full');
+                modalImage.alt = thumbnail.alt;
+                proofModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
+        });
 
-    // Mobile menu toggle
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        // Close modal when clicking on the close button
+        proofModalClose.addEventListener('click', () => {
+            proofModal.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        });
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenuButton.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      mobileMenu.setAttribute('aria-hidden', !mobileMenu.classList.contains('open'));
-    });
+        // Close modal when clicking outside the image
+        proofModal.addEventListener('click', (e) => {
+            if (e.target === proofModal) {
+                proofModal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+        });
 
-    mobileMenuClose.addEventListener('click', () => {
-      mobileMenuButton.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-    });
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuButton.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-      });
-    });
-
-    // Proof gallery modal functionality
-    const proofThumbnails = document.querySelectorAll('.proof-thumbnail');
-    const proofModal = document.querySelector('.proof-modal');
-    const proofModalImage = document.getElementById('proofModalImage');
-    const proofModalClose = document.querySelector('.proof-modal-close');
-
-    proofThumbnails.forEach(thumbnail => {
-      thumbnail.addEventListener('click', () => {
-        proofModalImage.src = thumbnail.querySelector('img').src;
-        proofModal.classList.add('active');
-        proofModal.setAttribute('aria-hidden', 'false');
-      });
-    });
-
-    proofModalClose.addEventListener('click', () => {
-      proofModal.classList.remove('active');
-      proofModal.setAttribute('aria-hidden', 'true');
-    });
-
-    proofModal.addEventListener('click', (e) => {
-      if (e.target === proofModal) {
-        proofModal.classList.remove('active');
-        proofModal.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    // Contact form submission (client-side handling)
-    function handleContactSubmit() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-
-      if (name && email && subject && message) {
-        // Simulate form submission (replace with actual backend integration)
-        console.log('Form submitted:', { name, email, subject, message });
-        alert('Thank you for your message! I will get back to you soon.');
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('subject').value = '';
-        document.getElementById('message').value = '';
-      } else {
-        alert('Please fill out all fields.');
-      }
-    }
-
-    // Scroll animation
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeInObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeElements.forEach(element => fadeInObserver.observe(element));
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Dynamic font size adjustment for small screens
-    function adjustFontSize() {
-      const width = window.innerWidth;
-      if (width < 480) {
-        document.body.style.fontSize = '13px';
-      } else if (width < 768) {
-        document.body.style.fontSize = '14px';
-      } else {
-        document.body.style.fontSize = '16px';
-      }
-    }
-
-    window.addEventListener('resize', adjustFontSize);
-    adjustFontSize();
-  </script>
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && proofModal.classList.contains('active')) {
+                proofModal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+        });
+    </script>
 </body>
 </html>
