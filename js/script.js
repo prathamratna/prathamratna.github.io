@@ -65,7 +65,40 @@ const observer = new IntersectionObserver((entries) => {
 fadeElements.forEach(element => {
     observer.observe(element);
 });
+// Proof gallery functionality
+const proofThumbnails = document.querySelectorAll('.proof-thumbnail img');
+const proofModal = document.querySelector('.proof-modal');
+const proofModalImg = proofModal.querySelector('img');
+const proofModalClose = document.querySelector('.proof-modal-close');
 
+proofThumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        proofModalImg.src = thumbnail.getAttribute('data-full');
+        proofModalImg.alt = thumbnail.alt;
+        proofModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    });
+});
+
+proofModalClose.addEventListener('click', () => {
+    proofModal.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+});
+
+proofModal.addEventListener('click', (e) => {
+    if (e.target === proofModal) {
+        proofModal.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && proofModal.classList.contains('active')) {
+        proofModal.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+});
 // Proof of Work Gallery Functionality
 const proofModal = document.getElementById('proofModal');
 const modalImage = document.getElementById('modalImage');
