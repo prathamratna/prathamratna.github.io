@@ -252,6 +252,46 @@
                 </p>
             </header>
 
+            <!-- Featured Post -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 text-sky-400">Featured Case Study</h2>
+                <div class="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-sky-500/50 transition-all duration-300">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="relative">
+                            <img src="images/hubspot-case-study.jpg" 
+                                 alt="HubSpot Marketing Automation Case Study" 
+                                 class="w-full h-full object-cover aspect-video">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-sky-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    Featured
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-center">
+                            <div class="mb-4">
+                                <span class="blog-tag">Marketing Automation</span>
+                                <span class="blog-tag">Inbound Marketing</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white">
+                                How HubSpot's Marketing Automation Strategy Generated $1.2B in Revenue
+                            </h3>
+                            <p class="text-slate-300 mb-4">
+                                Discover how HubSpot revolutionized marketing automation, achieving $1.2B in revenue through innovative inbound marketing strategies and customer-centric automation.
+                            </p>
+                            <div class="flex items-center text-slate-400 text-sm mb-4">
+                                <span class="mr-4"><i class="far fa-clock mr-1"></i> 8 min read</span>
+                                <span><i class="far fa-calendar mr-1"></i> Mar 15, 2025</span>
+                            </div>
+                            <a href="hubspot-marketing-automation-success.html" 
+                               class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors">
+                                Read Case Study
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Search Bar -->
             <div class="search-bar mb-8">
                 <i class="fas fa-search search-icon"></i>
@@ -273,19 +313,16 @@
             </nav>
 
             <!-- Blog Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Blog cards will be dynamically loaded here -->
-                <div class="blog-card rounded-lg overflow-hidden">
-                    <img src="images/blog-placeholder.jpg" 
-                         alt="Blog post thumbnail" 
-                         class="blog-image loading-skeleton">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blogGrid">
+                <!-- Gymshark Case Study -->
+                <article class="blog-card" data-categories="social-media">
+                    <picture>
+                        <source srcset="images/gymshark-case-study-ai.webp" type="image/webp">
+                        <img src="images/gymshark-case-study-ai.jpg" alt="AI illustration of Gymshark's social media marketing success, fitness influencers, and brand community" class="blog-image" loading="lazy" width="400" height="225">
+                    </picture>
                     <div class="blog-content">
-                        <h2 class="blog-title">
-                            How Gymshark Built a $1.4B Brand Using Only Social Media Marketing
-                        </h2>
-                        <p class="blog-excerpt">
-                            Discover the social media strategies that transformed Gymshark from a garage startup to a billion-dollar brand...
-                        </p>
+                        <h2 class="blog-title">How Gymshark Built a $1.4B Brand Using Only Social Media Marketing</h2>
+                        <p class="blog-excerpt">Discover the social media strategies that transformed Gymshark from a garage startup to a billion-dollar brand...</p>
                         <div class="blog-meta">
                             <span><i class="far fa-clock mr-1"></i> 8 min read</span>
                             <span><i class="far fa-calendar mr-1"></i> Mar 15, 2025</span>
@@ -294,14 +331,93 @@
                             <span class="blog-tag">Social Media</span>
                         </div>
                     </div>
-                </div>
-                <!-- More blog cards will be added here -->
+                </article>
+                <!-- Duolingo Case Study -->
+                <article class="blog-card" data-categories="social-media">
+                    <picture>
+                        <source srcset="images/duolingo-case-study-ai.webp" type="image/webp">
+                        <img src="images/duolingo-case-study-ai.jpg" alt="AI illustration of Duolingo's TikTok marketing success, viral mascot, and social media trends" class="blog-image" loading="lazy" width="400" height="225">
+                    </picture>
+                    <div class="blog-content">
+                        <h2 class="blog-title">How Duolingo's TikTok Strategy Generated 5M+ Followers in 6 Months</h2>
+                        <p class="blog-excerpt">Explore how Duolingo's innovative TikTok marketing strategy led to unprecedented growth in user acquisition.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-clock mr-1"></i> 7 min read</span>
+                            <span><i class="far fa-calendar mr-1"></i> Feb 25, 2025</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="blog-tag">Social Media</span>
+                            <span class="blog-tag">TikTok</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Morning Brew Case Study -->
+                <article class="blog-card" data-categories="email-marketing">
+                    <picture>
+                        <source srcset="images/morning-brew-case-study-ai.webp" type="image/webp">
+                        <img src="images/morning-brew-case-study-ai.jpg" alt="AI illustration of Morning Brew's email marketing success, newsletter, and digital communication" class="blog-image" loading="lazy" width="400" height="225">
+                    </picture>
+                    <div class="blog-content">
+                        <h2 class="blog-title">How Morning Brew Achieved 40%+ Email Open Rates in 2025</h2>
+                        <p class="blog-excerpt">Learn the secrets behind Morning Brew's exceptional email marketing success and how they maintain high engagement rates.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-clock mr-1"></i> 6 min read</span>
+                            <span><i class="far fa-calendar mr-1"></i> Mar 5, 2025</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="blog-tag">Email Marketing</span>
+                            <span class="blog-tag">Newsletter</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Airbnb Case Study -->
+                <article class="blog-card" data-categories="branding">
+                    <picture>
+                        <source srcset="images/airbnb-case-study-ai.webp" type="image/webp">
+                        <img src="images/airbnb-case-study-ai.jpg" alt="AI illustration of Airbnb's rebranding success, global travelers, and lifestyle brand transformation" class="blog-image" loading="lazy" width="400" height="225">
+                    </picture>
+                    <div class="blog-content">
+                        <h2 class="blog-title">How Airbnb's Rebranding Strategy Increased Their Valuation by $20B</h2>
+                        <p class="blog-excerpt">Explore how Airbnb's innovative rebranding strategy transformed their market position and significantly increased their company valuation.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-clock mr-1"></i> 7 min read</span>
+                            <span><i class="far fa-calendar mr-1"></i> Mar 10, 2025</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="blog-tag">Branding</span>
+                            <span class="blog-tag">Market Strategy</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- HubSpot Case Study -->
+                <article class="blog-card" data-categories="marketing-automation">
+                    <picture>
+                        <source srcset="images/hubspot-case-study-ai.webp" type="image/webp">
+                        <img src="images/hubspot-case-study-ai.jpg" alt="AI illustration of HubSpot's marketing automation success, digital dashboard, and business growth" class="blog-image" loading="lazy" width="400" height="225">
+                    </picture>
+                    <div class="blog-content">
+                        <h2 class="blog-title">How HubSpot's Marketing Automation Strategy Generated $1.2B in Revenue</h2>
+                        <p class="blog-excerpt">Discover how HubSpot revolutionized marketing automation, achieving $1.2B in revenue through innovative inbound marketing strategies and customer-centric automation.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-clock mr-1"></i> 8 min read</span>
+                            <span><i class="far fa-calendar mr-1"></i> Mar 15, 2025</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="blog-tag">Marketing Automation</span>
+                            <span class="blog-tag">Inbound Marketing</span>
+                        </div>
+                    </div>
+                </article>
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-full transition-colors">
-                    Load More Posts
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-2 mt-12" id="pagination">
+                <button class="pagination-button" id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="flex space-x-2" id="pageNumbers"></div>
+                <button class="pagination-button" id="nextPage">
+                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
         </div>
@@ -329,10 +445,140 @@
     </footer>
 
     <script>
+        // Blog data
+        const blogPosts = [
+            {
+                title: "How HubSpot's Marketing Automation Strategy Generated $1.2B in Revenue",
+                excerpt: "Discover how HubSpot revolutionized marketing automation, achieving $1.2B in revenue through innovative inbound marketing strategies and customer-centric automation.",
+                image: "images/hubspot-case-study.jpg",
+                categories: ["marketing-automation", "inbound-marketing"],
+                readTime: "8 min read",
+                date: "Mar 15, 2025",
+                url: "hubspot-marketing-automation-success.html"
+            },
+            {
+                title: "How Airbnb's Rebranding Strategy Increased Their Valuation by $20B",
+                excerpt: "Explore how Airbnb's innovative rebranding strategy transformed their market position and significantly increased their company valuation.",
+                image: "images/airbnb-case-study.jpg",
+                categories: ["branding", "market-strategy"],
+                readTime: "7 min read",
+                date: "Mar 10, 2025",
+                url: "airbnb-rebranding-success.html"
+            },
+            {
+                title: "How Morning Brew Achieved 40%+ Email Open Rates in 2025",
+                excerpt: "Learn the secrets behind Morning Brew's exceptional email marketing success and how they maintain high engagement rates.",
+                image: "images/morning-brew-case-study.jpg",
+                categories: ["email-marketing", "newsletter"],
+                readTime: "6 min read",
+                date: "Mar 5, 2025",
+                url: "morning-brew-email-success.html"
+            },
+            {
+                title: "Gymshark's Social Media Strategy: From $0 to $1B in 8 Years",
+                excerpt: "Discover how Gymshark leveraged social media to build a billion-dollar fitness apparel brand from scratch.",
+                image: "images/gymshark-case-study.jpg",
+                categories: ["social-media", "brand-growth"],
+                readTime: "9 min read",
+                date: "Mar 1, 2025",
+                url: "gymshark-social-media-success.html"
+            },
+            {
+                title: "How Duolingo's TikTok Strategy Increased App Downloads by 300%",
+                excerpt: "Explore how Duolingo's innovative TikTok marketing strategy led to unprecedented growth in user acquisition.",
+                image: "images/duolingo-case-study.jpg",
+                categories: ["social-media", "tiktok"],
+                readTime: "7 min read",
+                date: "Feb 25, 2025",
+                url: "duolingo-tiktok-success.html"
+            }
+        ];
+
+        // Pagination settings
+        const postsPerPage = 6;
+        let currentPage = 1;
+        let filteredPosts = [...blogPosts];
+
+        // Function to render blog posts
+        function renderBlogPosts(posts, page) {
+            const startIndex = (page - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const postsToShow = posts.slice(startIndex, endIndex);
+            
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = '';
+            
+            postsToShow.forEach(post => {
+                const blogCard = `
+                    <article class="blog-card rounded-lg overflow-hidden">
+                        <img src="${post.image}" 
+                             alt="${post.title}" 
+                             class="blog-image">
+                        <div class="blog-content">
+                            <h2 class="blog-title">${post.title}</h2>
+                            <p class="blog-excerpt">${post.excerpt}</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-clock mr-1"></i> ${post.readTime}</span>
+                                <span><i class="far fa-calendar mr-1"></i> ${post.date}</span>
+                            </div>
+                            <div class="mt-4">
+                                ${post.categories.map(category => 
+                                    `<span class="blog-tag">${category.split('-').map(word => 
+                                        word.charAt(0).toUpperCase() + word.slice(1)
+                                    ).join(' ')}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <a href="${post.url}" class="absolute inset-0" aria-label="Read ${post.title}"></a>
+                    </article>
+                `;
+                blogGrid.innerHTML += blogCard;
+            });
+        }
+
+        // Function to update pagination
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            const prevButton = document.getElementById('prevPage');
+            const nextButton = document.getElementById('nextPage');
+            
+            // Update prev/next buttons
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === totalPages;
+            
+            // Generate page numbers
+            let pageNumbersHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+                pageNumbersHTML += `
+                    <button class="pagination-button ${i === currentPage ? 'active' : ''}" 
+                            onclick="goToPage(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+            pageNumbers.innerHTML = pageNumbersHTML;
+        }
+
+        // Function to go to specific page
+        function goToPage(page) {
+            currentPage = page;
+            renderBlogPosts(filteredPosts, currentPage);
+            updatePagination();
+        }
+
         // Search functionality
         const searchInput = document.querySelector('.search-input');
         searchInput.addEventListener('input', (e) => {
-            // Search functionality will be implemented
+            const searchTerm = e.target.value.toLowerCase();
+            filteredPosts = blogPosts.filter(post => 
+                post.title.toLowerCase().includes(searchTerm) ||
+                post.excerpt.toLowerCase().includes(searchTerm) ||
+                post.categories.some(category => category.toLowerCase().includes(searchTerm))
+            );
+            currentPage = 1;
+            renderBlogPosts(filteredPosts, currentPage);
+            updatePagination();
         });
 
         // Category filtering
@@ -342,30 +588,38 @@
                 e.preventDefault();
                 categoryLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
-                // Category filtering will be implemented
-            });
-        });
-
-        // Load more functionality
-        const loadMoreBtn = document.querySelector('button');
-        loadMoreBtn.addEventListener('click', () => {
-            // Load more functionality will be implemented
-        });
-
-        // Lazy loading images
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('loading-skeleton');
-                    imageObserver.unobserve(img);
+                
+                const category = link.getAttribute('href').substring(1);
+                if (category === 'all') {
+                    filteredPosts = [...blogPosts];
+                } else {
+                    filteredPosts = blogPosts.filter(post => 
+                        post.categories.some(cat => cat.includes(category))
+                    );
                 }
+                currentPage = 1;
+                renderBlogPosts(filteredPosts, currentPage);
+                updatePagination();
             });
         });
 
-        lazyImages.forEach(img => imageObserver.observe(img));
+        // Initialize
+        renderBlogPosts(filteredPosts, currentPage);
+        updatePagination();
+
+        // Add pagination button event listeners
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        });
     </script>
 </body>
 </html> 
