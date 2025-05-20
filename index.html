@@ -337,20 +337,19 @@
         /* Proof Gallery Styles */
         .proof-gallery {
             display: flex;
-            gap: 0.5rem;
-            padding: 0.5rem 0;
+            gap: 1rem;
+            padding: 1rem 0;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
             scrollbar-color: #38bdf8 #1e293b;
-            margin-top: 1rem;
+            -webkit-overflow-scrolling: touch;
             width: 100%;
             box-sizing: border-box;
-            -webkit-overflow-scrolling: touch;
         }
 
         .proof-gallery::-webkit-scrollbar {
-            height: 5px;
+            height: 6px;
         }
 
         .proof-gallery::-webkit-scrollbar-track {
@@ -365,18 +364,15 @@
 
         .proof-thumbnail {
             flex: 0 0 auto;
-            width: 120px;
-            height: 90px;
-            scroll-snap-align: start;
+            width: 200px;
+            height: 150px;
             position: relative;
             cursor: pointer;
             transition: transform 0.3s ease;
             background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
             border-radius: 0.5rem;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            scroll-snap-align: start;
             will-change: transform;
         }
 
@@ -385,37 +381,40 @@
         }
 
         .proof-thumbnail img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 0.25rem;
+            transition: transform 0.3s ease;
         }
 
+        /* Proof Modal Styles */
         .proof-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(15, 23, 42, 0.98);
+            background-color: rgba(15, 23, 42, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999;
+            z-index: 1000;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(8px);
         }
 
         .proof-modal.active {
             opacity: 1;
-            pointer-events: all;
+            visibility: visible;
         }
 
         .proof-modal-content {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -423,31 +422,42 @@
         }
 
         .proof-modal-content img {
-            width: auto;
-            height: auto;
-            max-width: 95vw;
-            max-height: 85vh;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
             border-radius: 0.5rem;
             box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .proof-modal.active .proof-modal-content img {
+            transform: scale(1);
         }
 
         .proof-modal-close {
             position: fixed;
-            top: 15px;
-            right: 15px;
+            top: 1.5rem;
+            right: 1.5rem;
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
             background-color: rgba(56, 189, 248, 0.7);
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             transition: all 0.3s ease;
-            z-index: 1000;
+            z-index: 1001;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .proof-modal.active .proof-modal-close {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .proof-modal-close:hover {
@@ -455,148 +465,35 @@
             transform: rotate(90deg);
         }
 
-        .proof-gallery-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #38bdf8;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .proof-gallery-title i {
-            margin-right: 0.5rem;
-        }
-
         /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .blob {
-                width: 200px;
-                height: 200px;
-                filter: blur(12px);
-            }
-            
-            .section-title::after {
-                width: 80%;
-            }
-        }
-
         @media (max-width: 768px) {
-            .section-title::after {
-                width: 100%;
-            }
-            
-            .glow-card {
-                padding: 1.25rem;
-            }
-            
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
-            
-            .desktop-nav {
-                display: none;
-            }
-            
-            .mobile-menu-button {
-                display: flex;
-            }
-            
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-                max-width: 100%;
-            }
-            
-            .blob {
-                width: 150px;
-                height: 150px;
-                filter: blur(10px);
-                animation-duration: 20s;
-            }
-            
             .proof-thumbnail {
-                width: 100px;
-                height: 75px;
+                width: 160px;
+                height: 120px;
             }
-            
-            .proof-modal-content img {
-                max-width: 90vw;
-                max-height: 80vh;
+
+            .proof-modal-content {
+                width: 95%;
+                height: 95%;
             }
-            
-            section {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
+
+            .proof-modal-close {
+                top: 1rem;
+                right: 1rem;
+                width: 35px;
+                height: 35px;
             }
         }
 
         @media (max-width: 480px) {
-            .blob {
-                display: none; /* Remove blobs on very small screens for performance */
-            }
-            
             .proof-thumbnail {
-                width: 90px;
-                height: 70px;
-            }
-            
-            .skill-item {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .skill-icon {
-                font-size: 1rem;
-                margin-right: 0.75rem;
-            }
-            
-            .mobile-menu.open {
-                width: 85%;
-            }
-            
-            .mobile-menu a {
-                font-size: 1.1rem;
-                margin: 0.75rem 0;
-            }
-            
-            .proof-gallery-title {
-                font-size: 0.9rem;
-            }
-            
-            .proof-modal-content img {
-                max-width: 95vw;
-                max-height: 70vh;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .proof-thumbnail {
-                width: 80px;
-                height: 60px;
-            }
-            
-            .mobile-menu.open {
-                width: 90%;
-            }
-            
-            .mobile-menu a {
-                font-size: 1rem;
+                width: 140px;
+                height: 105px;
             }
         }
 
         /* Touch device optimizations */
         @media (hover: none) {
-            .glow-card:hover {
-                transform: none;
-                box-shadow: 0 4px 6px rgba(56, 189, 248, 0.1);
-            }
-            
-            .skill-item:hover {
-                transform: none;
-                background-color: rgba(30, 41, 59, 0.5);
-            }
-            
             .proof-thumbnail:hover {
                 transform: none;
             }
@@ -625,6 +522,143 @@
                 opacity: 1;
                 transform: none;
             }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                max-width: 100%;
+            }
+            
+            .blob {
+                width: 150px;
+                height: 150px;
+                filter: blur(10px);
+                animation-duration: 20s;
+            }
+            
+            .proof-thumbnail {
+                width: 100px;
+                height: 75px;
+            }
+            
+            .proof-modal-content img {
+                max-width: 90vw;
+                max-height: 80vh;
+            }
+            
+            .proof-modal-close {
+                font-size: 1.25rem;
+                width: 30px;
+                height: 30px;
+                top: 10px;
+                right: 10px;
+            }
+            
+            section {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            
+            .back-to-top,
+            .mobile-menu-button,
+            .proof-modal,
+            .blob {
+                display: none !important;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            
+            .glow-card {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            a {
+                text-decoration: none !important;
+                color: black !important;
+            }
+            
+            .gradient-text {
+                color: black !important;
+                background: none !important;
+            }
+        }
+        
+        /* Loading State for Images */
+        .image-loading {
+            position: relative;
+            background: linear-gradient(90deg, #1e293b, #2d3748, #1e293b);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 0;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+        
+        .breadcrumbs a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs .separator {
+            color: #475569;
+        }
+
+        /* Main Content Styles */
+        main {
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Ensure sections are visible */
+        section {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Fix for fixed header */
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+        
+        /* Ensure content is visible over blobs */
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Fix for mobile menu */
+        .mobile-menu {
+            z-index: 100;
+        }
+        
+        /* Ensure proper stacking context */
+        .proof-modal {
+            z-index: 1000;
         }
 
         /* Focus Styles */
@@ -1396,77 +1430,6 @@
             window.removeEventListener('touchstart', handleFirstTouch, false);
         }
         window.addEventListener('touchstart', handleFirstTouch, false);
-
-        // Back to Top Button
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Progress Bar
-        const progressBar = document.getElementById('progressBar');
-        
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (window.scrollY / windowHeight) * 100;
-            progressBar.style.width = `${progress}%`;
-        });
-        
-        // Update Breadcrumbs
-        const sections = document.querySelectorAll('section[id]');
-        const currentSection = document.getElementById('currentSection');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    currentSection.textContent = entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        sections.forEach(section => observer.observe(section));
-        
-        // Lazy Loading Images
-        const lazyImages = document.querySelectorAll('img[data-full]');
-        
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.full;
-                    img.classList.remove('image-loading');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        lazyImages.forEach(img => {
-            img.classList.add('image-loading');
-            imageObserver.observe(img);
-        });
-        
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful');
-                }).catch(err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
     </script>
 </body>
 </html>

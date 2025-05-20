@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Digital Marketing Case Studies & Insights | Prathamratna Meshram</title>
+    <meta name="description" content="Explore in-depth digital marketing case studies, strategies, and success stories from industry leaders. Learn from real-world examples and implement proven tactics.">
+    <meta name="keywords" content="digital marketing, case studies, social media marketing, email marketing, branding, marketing automation, content marketing">
+    <meta name="author" content="Prathamratna Meshram">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prathamratna.github.io/blogs">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Digital Marketing Blog | Case Studies & Strategies">
+    <meta property="og:description" content="Explore in-depth digital marketing case studies, strategies, and success stories from industry leaders. Learn from real-world examples and implement proven tactics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prathamratna.github.io/blogs">
+    <meta property="og:image" content="https://prathamratna.github.io/images/blog-og.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digital Marketing Blog | Case Studies & Strategies">
+    <meta name="twitter:description" content="Explore in-depth digital marketing case studies, strategies, and success stories from industry leaders. Learn from real-world examples and implement proven tactics.">
+    <meta name="twitter:image" content="https://prathamratna.github.io/images/blog-og.jpg">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Digital Marketing Blog",
+        "description": "Explore in-depth digital marketing case studies, strategies, and success stories from industry leaders.",
+        "url": "https://prathamratna.github.io/blogs",
+        "author": {
+            "@type": "Person",
+            "name": "Prathamratna Meshram",
+            "url": "https://prathamratna.github.io"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Prathamratna Meshram",
+            "url": "https://prathamratna.github.io"
+        }
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7064TYE36R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7064TYE36R');
+    </script>
+    <script src="/js/analytics.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        /* Base Styles */
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        /* Blog Card Styles */
+        .blog-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1);
+        }
+        
+        .blog-image {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .blog-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Category Navigation */
+        .category-nav {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: #38bdf8 #1e293b;
+        }
+        
+        .category-nav::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .category-nav::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        .category-nav::-webkit-scrollbar-thumb {
+            background-color: #38bdf8;
+            border-radius: 2px;
+        }
+        
+        .category-link {
+            color: #94a3b8;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        .category-link:hover,
+        .category-link.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 0.5rem;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 1.125rem;
+            }
+            
+            .blog-meta {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Loading State */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #1e293b, #2d3748, #1e293b);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl sm:text-2xl font-bold text-sky-400 hover:text-sky-300 transition-colors">
+                Prathamratna Meshram
+            </a>
+            <a href="/" class="text-slate-300 hover:text-sky-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-sky-400">
+                    Digital Marketing Blog
+                </h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Explore in-depth case studies, strategies, and success stories from industry leaders. 
+                    Learn from real-world examples and implement proven tactics.
+                </p>
+            </header>
+
+            <!-- Search Bar -->
+            <div class="search-bar mb-8">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Search articles..." 
+                       aria-label="Search articles">
+            </div>
+
+            <!-- Category Navigation -->
+            <nav class="category-nav mb-8" aria-label="Blog categories">
+                <a href="#all" class="category-link active">All Posts</a>
+                <a href="#digital-marketing" class="category-link">Digital Marketing</a>
+                <a href="#social-media" class="category-link">Social Media</a>
+                <a href="#email-marketing" class="category-link">Email Marketing</a>
+                <a href="#branding" class="category-link">Branding</a>
+                <a href="#automation" class="category-link">Automation</a>
+                <a href="#content-marketing" class="category-link">Content Marketing</a>
+            </nav>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog cards will be dynamically loaded here -->
+                <div class="blog-card rounded-lg overflow-hidden">
+                    <img src="images/blog-placeholder.jpg" 
+                         alt="Blog post thumbnail" 
+                         class="blog-image loading-skeleton">
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            How Gymshark Built a $1.4B Brand Using Only Social Media Marketing
+                        </h2>
+                        <p class="blog-excerpt">
+                            Discover the social media strategies that transformed Gymshark from a garage startup to a billion-dollar brand...
+                        </p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-clock mr-1"></i> 8 min read</span>
+                            <span><i class="far fa-calendar mr-1"></i> Mar 15, 2025</span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="blog-tag">Social Media</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- More blog cards will be added here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-full transition-colors">
+                    Load More Posts
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 py-8 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/prathamratna/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="text-slate-300 hover:text-sky-400 transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:work.prathamratnameshram@gmail.com"
+                   class="text-slate-300 hover:text-sky-400 transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm">
+                © 2025 Prathamratna Meshram. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', (e) => {
+            // Search functionality will be implemented
+        });
+
+        // Category filtering
+        const categoryLinks = document.querySelectorAll('.category-link');
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                // Category filtering will be implemented
+            });
+        });
+
+        // Load more functionality
+        const loadMoreBtn = document.querySelector('button');
+        loadMoreBtn.addEventListener('click', () => {
+            // Load more functionality will be implemented
+        });
+
+        // Lazy loading images
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('loading-skeleton');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
+</body>
+</html> 

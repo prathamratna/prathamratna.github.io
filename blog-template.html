@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>[Blog Post Title] | Digital Marketing Case Study</title>
+    <meta name="description" content="[Blog post meta description]">
+    <meta name="keywords" content="[relevant keywords]">
+    <meta name="author" content="Prathamratna Meshram">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prathamratna.github.io/blogs/[post-slug]">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="[Blog Post Title] | Digital Marketing Case Study">
+    <meta property="og:description" content="[Blog post meta description]">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://prathamratna.github.io/blogs/[post-slug]">
+    <meta property="og:image" content="https://prathamratna.github.io/images/[post-image].jpg">
+    <meta property="article:published_time" content="[Publication Date]">
+    <meta property="article:modified_time" content="[Last Modified Date]">
+    <meta property="article:section" content="[Category]">
+    <meta property="article:tag" content="[Tags]">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[Blog Post Title] | Digital Marketing Case Study">
+    <meta name="twitter:description" content="[Blog post meta description]">
+    <meta name="twitter:image" content="https://prathamratna.github.io/images/[post-image].jpg">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Blog Post Title]",
+        "description": "[Blog post meta description]",
+        "image": "https://prathamratna.github.io/images/[post-image].jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Prathamratna Meshram",
+            "url": "https://prathamratna.github.io"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Prathamratna Meshram",
+            "url": "https://prathamratna.github.io"
+        },
+        "datePublished": "[Publication Date]",
+        "dateModified": "[Last Modified Date]",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prathamratna.github.io/blogs/[post-slug]"
+        }
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        /* Base Styles */
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        /* Article Styles */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+        
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #38bdf8;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #94a3b8;
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        
+        .article-content pre {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .article-content a {
+            color: #38bdf8;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0ea5e9;
+        }
+        
+        /* Article Meta */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+        
+        .article-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .article-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Social Share */
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .social-share a {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+        }
+        
+        .social-share a:hover {
+            color: #38bdf8;
+        }
+        
+        /* Author Bio */
+        .author-bio {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            margin: 3rem 0;
+        }
+        
+        .related-post-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .related-post-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .article-content h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .article-content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .article-meta {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl sm:text-2xl font-bold text-sky-400 hover:text-sky-300 transition-colors">
+                Prathamratna Meshram
+            </a>
+            <a href="/blogs" class="text-slate-300 hover:text-sky-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Blog
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-12">
+        <article class="container mx-auto px-4">
+            <div class="article-content">
+                <!-- Article Header -->
+                <header class="mb-8">
+                    <h1>[Blog Post Title]</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-clock mr-1"></i> [Reading Time] min read</span>
+                        <span><i class="far fa-calendar mr-1"></i> [Publication Date]</span>
+                        <span><i class="far fa-folder mr-1"></i> [Category]</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="article-tag">[Tag 1]</span>
+                        <span class="article-tag">[Tag 2]</span>
+                        <span class="article-tag">[Tag 3]</span>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <img src="images/[post-image].jpg" 
+                     alt="[Image Alt Text]" 
+                     class="w-full rounded-lg mb-8">
+
+                <!-- Article Content -->
+                <div class="prose prose-invert max-w-none">
+                    <!-- Introduction -->
+                    <p class="lead">
+                        [Introduction paragraph]
+                    </p>
+
+                    <!-- Main Content -->
+                    <h2>[Section 1 Title]</h2>
+                    <p>[Section 1 content]</p>
+
+                    <h2>[Section 2 Title]</h2>
+                    <p>[Section 2 content]</p>
+
+                    <h3>[Subsection Title]</h3>
+                    <p>[Subsection content]</p>
+
+                    <!-- Case Study Section -->
+                    <h2>Case Study: [Company Name]</h2>
+                    <p>[Case study content]</p>
+
+                    <!-- Key Takeaways -->
+                    <h2>Key Takeaways</h2>
+                    <ul>
+                        <li>[Takeaway 1]</li>
+                        <li>[Takeaway 2]</li>
+                        <li>[Takeaway 3]</li>
+                    </ul>
+
+                    <!-- Conclusion -->
+                    <h2>Conclusion</h2>
+                    <p>[Conclusion content]</p>
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share">
+                    <span class="text-slate-400">Share this article:</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="images/profile.jpg" 
+                             alt="Prathamratna Meshram" 
+                             class="w-16 h-16 rounded-full">
+                        <div>
+                            <h3 class="text-xl font-semibold text-sky-400">Prathamratna Meshram</h3>
+                            <p class="text-slate-400">Digital Marketing Specialist</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300">
+                        [Author bio content]
+                    </p>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-6">Related Articles</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="#" class="related-post-card">
+                            <h3 class="text-lg font-semibold text-sky-400 mb-2">[Related Post 1 Title]</h3>
+                            <p class="text-slate-400">[Related Post 1 Excerpt]</p>
+                        </a>
+                        <a href="#" class="related-post-card">
+                            <h3 class="text-lg font-semibold text-sky-400 mb-2">[Related Post 2 Title]</h3>
+                            <p class="text-slate-400">[Related Post 2 Excerpt]</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 py-8 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/prathamratna/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="text-slate-300 hover:text-sky-400 transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:work.prathamratnameshram@gmail.com"
+                   class="text-slate-300 hover:text-sky-400 transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm">
+                © 2025 Prathamratna Meshram. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Social share functionality
+        const shareLinks = document.querySelectorAll('.social-share a');
+        shareLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = encodeURIComponent(window.location.href);
+                const title = encodeURIComponent(document.title);
+                
+                let shareUrl;
+                if (link.classList.contains('fa-linkedin-in')) {
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                } else if (link.classList.contains('fa-twitter')) {
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                } else if (link.classList.contains('fa-facebook-f')) {
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                }
+                
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            });
+        });
+
+        // Reading time calculation
+        function calculateReadingTime() {
+            const text = document.querySelector('.article-content').innerText;
+            const wordCount = text.trim().split(/\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute
+            document.querySelector('.article-meta span:first-child').innerHTML = 
+                `<i class="far fa-clock mr-1"></i> ${readingTime} min read`;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateReadingTime();
+        });
+    </script>
+</body>
+</html> 
